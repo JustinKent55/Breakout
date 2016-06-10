@@ -34,7 +34,7 @@ Scores can be checked in the main menu > high scores.
 Currently, there is only one level.
 
 -----------------------------------------------------------------------------------------
-									 Game Art 
+				    Game Art 
 -----------------------------------------------------------------------------------------
 All game art was created by Justin Kent using GIMP 2.8
 
