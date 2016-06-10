@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8" />
+	<title>Breakout Game</title>
+	<link rel="stylesheet" href="css/Assignment3.css" type="text/css" />
+</head>
+
+<body>
+	<div id = "game">
+		<div id = "main-menu" class = "screen">
+			<ul class = "menu">
+				<img src="./images/menuTitle.png">
+				<li><button id = "id-new-game">New&nbsp;Game</button></li>
+				<li><button id = "id-high-scores">High&nbsp;Scores</button></li>
+				<li><button id = "id-help">Help</button></li>
+				<li><button id = "id-about">About</button></li>
+			</ul>
+		</div>
+		<div id = "game-play" class = "screen">
+			<canvas id = "canvas-main" width = "1000" height = "600"></canvas>
+			<ul class = "menu">
+				<li><button id = "id-game-play-back">Back</button></li>
+			</ul>
+		</div>
+		<div id = "high-scores" class = "screen">
+			<h1 class="mainText">High Scores</h1>
+			<div id="highScoresDiv" class="mainText">
+				<span id="highScoresSpan"></span>
+			</div>
+			<ul class = "menu">
+				<li><button id = "id-high-scores-back">Back</button></li>
+				<br/>
+				<li><button id = "id-high-scores-delete">Delete&nbspHigh&nbspScores</button></li>
+			</ul>
+		</div>
+		<div id = "help" class = "screen">
+			<h1 class="mainText">Help</h1>
+			<p>This is some help on how to play the game</p>
+			<ul class = "menu">
+				<li><button id = "id-help-back">Back</button></li>
+			</ul>
+		</div>
+		<div id = "about" class = "screen">
+			<h1 class="mainText">About</h1>
+			<p>Javascript Development & Menu Art Design by</p>
+			<p>Justin Kent</p>
+			<br/>
+			<p>Menu art tutorial provided by: GimpTOOTS</p>
+			<p>"How to make shattered text in Gimp 2.8.10"</p>
+			<p>https://www.youtube.com/watch?v=ohQ5fY7-yLI</p>
+			<br/>
+			<p>Special Thanks To: 宇多田 ヒカル and 김태연</p>
+			<ul class = "menu">
+				<li><button id = "id-about-back">Back</button></li>
+			</ul>
+		</div>
+	</div>
+
+	<script src="scripts/modernizr.js"></script>
+	<script src="scripts/Game.js"></script>
+</body>
+
+</html>
