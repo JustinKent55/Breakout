@@ -1,0 +1,60 @@
+This works for two rectangles aligned with the X and Y axis.
+Each rectangle has the properties:
+"left", the x coordinate of its left side,
+"top", the y coordinate of its top side,
+"right", the x coordinate of its right side,
+"bottom", the y coordinate of its bottom side,
+
+function IntersectRect(r1:Rectangle, r2:Rectangle):Boolean {
+    return !(r2.left > r1.right
+        || r2.right < r1.left
+        || r2.top > r1.bottom
+        || r2.bottom < r1.top);
+}
+Note that this is designed for a coordinate system in which the +y axis points down and the +x axis is directed to the right (i.e. typical screen/pixel coordinates). To adapt this to a typical cartesian system in which +y is directed upward, the comparisons along the vertical axes would be reversed, e.g.:
+
+return !(r2.left > r1.right
+    || r2.right < r1.left
+    || r2.top < r1.bottom
+    || r2.bottom > r1.top);
+The idea is to capture all possible conditions upon which the rectangles will not overlap, and then negate the answer to see if they are overlapped. Regardless of the direction of the axes, it's easy to see that two rectangles will not overlap if:
+
+the left edge of r2 is further right than the right edge of r1
+
+ ________     ________
+|        |   |        |
+|   r1   |   |   r2   |
+|        |   |        |
+|________|   |________|
+or the right edge of r2 is further left than the left edge of r1
+
+ ________     ________
+|        |   |        |
+|   r2   |   |   r1   |
+|        |   |        |
+|________|   |________|
+or the top edge of r2 is below the bottom edge of r1
+
+ ________ 
+|        |
+|   r1   |
+|        |
+|________|
+ ________ 
+|        |
+|   r2   |
+|        |
+|________|
+or the bottom edge of r2 is above the top edge of r1
+
+ ________ 
+|        |
+|   r2   |
+|        |
+|________|
+ ________ 
+|        |
+|   r1   |
+|        |
+|________|
+The original function - and an alternative description of why it works - can be found here: http://tekpool.wordpress.com/2006/10/11/rectangle-intersection-determine-if-two-given-rectangles-intersect-each-other-or-not/
